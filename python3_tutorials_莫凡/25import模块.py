@@ -2,12 +2,12 @@
 
 # import time
 
-# import time as t
+# import time as t -- 简单写法 以后就是t.*** 而不是time.***
 
 
-# from time import time,localtime
-
-from time import *
+# from time import localtime -- 以后就简写写localtime
+ 
+from time import *    #把所有功能都简写了
 
 
 print(localtime())

@@ -1,28 +1,12 @@
 import copy
+a = [[3,3],1,2]
 
-a = [1, 2, 3]
-b = a
+# 一般copy
+b = a   # id(b) = id(a)
 
-id(a)  # 硬盘索引
-id(b)
+#Shallow copy
+c = copy.copy(a) #id(c) != id(a)
+              #第二层： id(c[0]) = id(a[0])
 
-print('a:', id(a), '\nb:', id(b))
-print(id(a)==id(b))
-a[0] = 3
-
-print(b)
-
-c = copy.copy(a)  # shallow copy
-print(id(c) == id(a))
-
-n = [1, 2, [3, 4]]
-m=copy.copy(n)
-print(id(m) == id(n))
-print(a[2]==b[2]) # 一样的
-
-
-# deep copy
-
-e = copy.deepcopy(n)
-
-print(e[2]==n[2])
+#Deep copy
+e = copy.deepcopy(a) #第二层id(e[0] ！= id(a[0]))
